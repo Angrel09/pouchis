@@ -155,6 +155,25 @@ const playPet = (req, res) => {
   res.json({ message: `${pet.name} se ha divertido mucho jugando`, pet });
 };
 
+// Lógica para poner a dormir a la mascota
+const sleepPet = (req, res) => {
+    const pet = pets.find(p => p.id === parseInt(req.params.id));
+    
+    if (!pet) {
+        return res.status(404).json({ message: 'Mascota no encontrada' });
+    }
+
+    // Restaurar energía al 100 y quitar un poco de hambre
+    pet.stats.energy = 100;
+    pet.stats.hunger = Math.max(0, pet.stats.hunger - 10); 
+    pet.lastUpdated = new Date().toISOString();
+
+    res.json({
+        message: `${pet.name} ha dormido y recuperado su energía.`,
+        pet
+    });
+};
+
 module.exports = {
   getAllPets,
   getPetById,
@@ -162,5 +181,6 @@ module.exports = {
   updatePet,
   deletePet,
   feedPet,
-  playPet
+  playPet,
+  sleepPet
 };

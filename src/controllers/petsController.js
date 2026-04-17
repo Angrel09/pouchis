@@ -181,6 +181,7 @@ module.exports = {
   updatePet,
   deletePet,
   feedPet,
+  equipItem,
   playPet,
-  sleepPet
+  sleepPet, 
 };

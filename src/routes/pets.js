@@ -9,6 +9,7 @@ router.post('/', validatePet, petsController.createPet);
 router.put('/:id', validatePet, petsController.updatePet);
 router.delete('/:id', petsController.deletePet);
 router.patch('/:id/feed', petsController.feedPet);
+router.patch('/:id/equip', petsController.equipItem);
 router.patch('/:id/play', petsController.playPet);
 
 module.exports = router;

@@ -28,16 +28,12 @@ const buyItem = (req, res) => {
   // Descontar monedas
   pet.coins -= item.price;
 
-  // Aplicar efectos instantáneamente
-  if (item.effects) {
-    if (item.effects.hunger) pet.hunger = clamp(pet.hunger + item.effects.hunger, 0, 100);
-    if (item.effects.health) pet.health = clamp(pet.health + item.effects.health, 0, 100);
-    if (item.effects.energy) pet.energy = clamp(pet.energy + item.effects.energy, 0, 100);
-    if (item.effects.happiness) pet.happiness = clamp(pet.happiness + item.effects.happiness, 0, 100);
-  }
+  // Si es ropa, se podría equipar o guardar. Si es consumible, al inventario.
+  // Por ahora, todo al inventario para permitir Drag & Drop.
+  pet.inventory.push({ ...item, purchaseId: Date.now() });
 
   res.json({
-    message: `Compra exitosa: ${item.name} adquirido y usado`,
+    message: `Has comprado ${item.name}. ¡Ahora está en tu inventario!`,
     remainingCoins: pet.coins,
     pet
   });

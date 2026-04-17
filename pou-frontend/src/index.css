@@ -75,3 +75,14 @@
 .pet-gradient-critical {
   background: radial-gradient(circle, rgba(255,107,107,1) 0%, rgba(45,52,54,0.6) 100%);
 }
+
+/* Dynamic Backgrounds */
+.bg-day {
+  background: linear-gradient(180deg, #87CEEB 0%, #FFF8F0 100%);
+}
+.bg-night {
+  background: linear-gradient(180deg, #2C3E50 0%, #000000 100%);
+}
+.bg-sunset {
+  background: linear-gradient(180deg, #FF7E5F 0%, #FEB47B 100%);
+}

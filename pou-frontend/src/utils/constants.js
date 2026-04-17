@@ -18,4 +18,18 @@ export const CATEGORY_COLORS = {
   ropa: 'bg-accent text-text',
 };
 
+export const ITEM_EMOJIS = {
+  item_001: '🍔',
+  item_002: '🍕',
+  item_003: '🍎',
+  item_004: '🍣',
+  item_005: '🍦',
+  item_006: '🧪',
+  item_007: '⚡',
+  item_008: '🌟',
+  item_009: '🧢',
+  item_010: '🧥',
+  item_011: '🕶️',
+};
+
 export const DEFAULT_PET_ID = 'pet_001';

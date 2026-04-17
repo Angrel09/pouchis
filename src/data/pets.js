@@ -9,6 +9,12 @@ const pets = [
     energy: 90,
     happiness: 75,
     coins: 150,
+    inventory: [],
+    equipped: {},
+    quests: [
+      { id: 'q1', description: 'Alimenta a tu mascota', goal: 3, progress: 0, reward: 50, completed: false },
+      { id: 'q2', description: 'Juega minijuegos', goal: 2, progress: 0, reward: 100, completed: false }
+    ],
     status: "healthy",
     createdAt: "2025-01-01T00:00:00Z"
   },
@@ -22,6 +28,12 @@ const pets = [
     energy: 50,
     happiness: 60,
     coins: 300,
+    inventory: [],
+    equipped: {},
+    quests: [
+      { id: 'q1', description: 'Alimenta a tu mascota', goal: 3, progress: 0, reward: 50, completed: false },
+      { id: 'q2', description: 'Juega minijuegos', goal: 2, progress: 0, reward: 100, completed: false }
+    ],
     status: "healthy",
     createdAt: "2025-01-05T12:00:00Z"
   },
@@ -35,6 +47,12 @@ const pets = [
     energy: 20,
     happiness: 30,
     coins: 50,
+    inventory: [],
+    equipped: {},
+    quests: [
+      { id: 'q1', description: 'Alimenta a tu mascota', goal: 3, progress: 0, reward: 50, completed: false },
+      { id: 'q2', description: 'Juega minijuegos', goal: 2, progress: 0, reward: 100, completed: false }
+    ],
     status: "healthy",
     createdAt: "2025-01-10T08:30:00Z"
   }

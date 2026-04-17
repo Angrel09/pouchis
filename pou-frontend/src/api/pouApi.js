@@ -9,7 +9,8 @@ const api = axios.create({
 export const getPets = () => api.get('/pets');
 export const getPet = (id) => api.get(`/pets/${id}`);
 export const createPet = (name) => api.post('/pets', { name });
-export const feedPet = (petId, itemId) => api.patch(`/pets/${petId}/feed`, { itemId });
+export const feedPet = (petId, purchaseId) => api.patch(`/pets/${petId}/feed`, { purchaseId });
+export const equipPetItem = (petId, purchaseId) => api.patch(`/pets/${petId}/equip`, { purchaseId });
 export const playWithPet = (petId) => api.patch(`/pets/${petId}/play`);
 
 // Tienda

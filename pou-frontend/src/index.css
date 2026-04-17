@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #FFF8F0;
+  --color-surface: #FFFFFF;
+  --color-primary: #FF6B6B;
+  --color-secondary: #4ECDC4;
+  --color-accent: #FFE66D;
+  --color-purple: #A78BFA;
+  --color-green: #6BCB77;
+  --color-orange: #FF9F43;
+  --color-text: #2D3436;
+  --color-muted: #B2BEC3;
+}
+
+@layer base {
+  body {
+    @apply bg-bg text-text font-nunito;
+  }
+  h1, h2, h3, .font-display {
+    @apply font-fredoka;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface rounded-card shadow-card p-6;
+  }
+  .btn-primary {
+    @apply bg-primary text-white font-bold py-3 px-6 rounded-2xl hover:bg-opacity-90 active:scale-95 transition-all;
+  }
+}
+
+/* Custom radial gradients for Pet Display */
+.pet-gradient-happy {
+  background: radial-gradient(circle, rgba(255,230,109,1) 0%, rgba(255,107,107,0.4) 100%);
+}
+.pet-gradient-tired {
+  background: radial-gradient(circle, rgba(167,139,250,0.6) 0%, rgba(45,52,54,0.3) 100%);
+}
+.pet-gradient-hungry {
+  background: radial-gradient(circle, rgba(255,159,67,0.7) 0%, rgba(107,203,119,0.2) 100%);
+}
+.pet-gradient-critical {
+  background: radial-gradient(circle, rgba(255,107,107,1) 0%, rgba(45,52,54,0.6) 100%);
+}

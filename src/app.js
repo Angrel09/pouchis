@@ -16,7 +16,7 @@ const activitiesRoutes = require('./routes/activities');
 app.use(express.static(path.join(__dirname, '../pou-frontend/dist')));
 
 // Cualquier ruta que no coincida con la API, sirve el index.html del front
-app.get('*', (req, res) => {
+app.get('(.*)', (req, res) => {
   res.sendFile(path.join(__dirname, '../pou-frontend/dist', 'index.html'));
 });
 
@@ -30,6 +30,14 @@ app.use('/api/pets', petsRoutes);
 app.use('/api/items', itemsRoutes);
 app.use('/api/shop', shopRoutes);
 app.use('/api/activities', activitiesRoutes);
+
+// 1. Servir archivos estáticos primero
+app.use(express.static(path.join(__dirname, '../pou-frontend/dist')));
+
+// 2. Capturar cualquier otra ruta para el frontend (SPA)
+app.get('(.*)', (req, res) => {
+  res.sendFile(path.join(__dirname, '../pou-frontend/dist', 'index.html'));
+});
 
 // Ruta de prueba
 app.get('/', (req, res) => {

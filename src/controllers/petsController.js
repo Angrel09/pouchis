@@ -79,7 +79,7 @@ const deletePet = (req, res) => {
   res.json({ message: "Mascota eliminada", pet: deletedPet[0] });
 };
 
-const feedPet = (req, res) => {
+const feedPet = async (req, res) => {
   const pet = pets.find(p => p.id === req.params.id);
   if (!pet) return res.status(404).json({ error: "Mascota no encontrada" });
 
